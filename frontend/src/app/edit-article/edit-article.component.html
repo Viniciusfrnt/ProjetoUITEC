@@ -1,0 +1,34 @@
+<div class="container">
+    <h1 style="display: flex; justify-content: center; padding: 10px; font-weight: 400; color: purple;">Editar item</h1>
+
+    <form style="display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    
+    " 
+    (ngSubmit)="updateArticle()" *ngIf="article">
+    
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="article.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Categoria" [(ngModel)]="article.categoria" name="categoria">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="number" placeholder="Valor" [(ngModel)]="article.valor" name="valor">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="date" placeholder="Data" [(ngModel)]="article.data" name="data">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="number" placeholder="Estoque" [(ngModel)]="article.estoque" name="estoque">
+        </mat-form-field>
+        <mat-checkbox [(ngModel)]="article.perecivel" name="perecivel">Perecível</mat-checkbox>
+        <button mat-raised-button style="background-color: rgb(114, 0, 114); color: white;" type="submit">Editar</button>
+    </form>
+</div>
+
+<app-footer></app-footer>
